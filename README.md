@@ -1,5 +1,9 @@
 #Bookmark Manager
 
+Week 4: Introduction to databases.
+
+User stories:
+
 As a web user,
 So I can keep track of my browsing,
 I want to see a list of links I’ve saved.
