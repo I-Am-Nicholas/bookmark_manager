@@ -5,13 +5,18 @@ require './lib/server'
 
 class Bookmark < Sinatra::Base
 
-  # get '/' do
-  #  erb :bookmarkie
-  # end
+   get '/' do
+    erb :index
+   end
 
-  get '/' do
+  get '/linky' do
     @links = Link.all
-    erb :'/index'
+    erb :bookmarkie
+  end
+
+  post '/links/new' do
+    Link.create(title: params[:Title], url: params[:URL])
+    redirect '/linky'
   end
 
 end

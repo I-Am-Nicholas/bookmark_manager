@@ -1,10 +1,13 @@
-<h1> Links </h1>
+https://inbox.google.com/u/0/?pli=1
 
-<ul id='links'>
-  <% @links.each do |link| %>
-    <li>
-      Title: <%= link.title %>
-      URL:   <%= link.url   %>
-    </li>
-  <% end %>
-</ul>
+<form action=/linky method=get>
+  <button type=submit value=links>List links?</button>
+</form>
+
+<form action=/links/new method=post>
+  <label for="Title">Title</label>
+  <input type="text" name="Title">
+  <label>URL</label>
+  <input type="text" name="URL" >
+  <button type=submit value=links>Submit links!</button>
+</form>
