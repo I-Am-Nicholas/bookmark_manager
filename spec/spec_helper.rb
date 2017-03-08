@@ -1,7 +1,7 @@
-
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
+#require './lib/server'
 
 
 
