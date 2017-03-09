@@ -1,3 +1,5 @@
+ENV["RACK_ENV"] ||= 'development'
+
 require 'sinatra/base'
 require './lib/link'
 require './lib/server'
@@ -6,7 +8,13 @@ require './lib/server'
 class Bookmark < Sinatra::Base
 
    get '/' do
-    erb :index
+     erb :index
+   end
+
+
+   post '/links/new' do
+     Link.create(title: params[:Title], url: params[:URL])
+     redirect '/linky'
    end
 
   get '/linky' do
@@ -14,9 +22,5 @@ class Bookmark < Sinatra::Base
     erb :bookmarkie
   end
 
-  post '/links/new' do
-    Link.create(title: params[:Title], url: params[:URL])
-    redirect '/linky'
-  end
 
 end
